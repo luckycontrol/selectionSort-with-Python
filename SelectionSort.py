@@ -6,15 +6,12 @@ def fill_array(array, num):
 
 def sort(array):
     for i in range(len(array)):
+        min = i //let i be minimum element's index
         for j in range(i+1, len(array)):
-            if j >= len(array):
-                break
-
-            if array[i] > array[j]:
-                temp = array[i]
-                array[i] = array[j]
-                array[j] = temp
-
+            if array[min] > array[j] :
+                min = j   
+        array[i],array[min] = array[min],array[i]
+        
 def print_array(array):
     for i in range(len(array)):
         print(array[i], end=" ")
